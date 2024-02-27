@@ -10,6 +10,7 @@ export const EvenList = ({events, deleteItem}) => {
                         <h2 style={{color: 'red'}}>ID: {event.id}</h2>
                         <h2>Title: {event.title}</h2>
                         <h2>Date: {event.date}</h2>
+                        <h2>Location: {event.location}</h2>
                         <button onClick={() => deleteItem(event.id)}>Delete</button>
                     </div>
                 ))}

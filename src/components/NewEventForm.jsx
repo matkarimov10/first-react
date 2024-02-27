@@ -5,7 +5,7 @@ import {v4 as uuidv4} from 'uuid';
 export const NewEventForm = ({newEvent}) => {
     const [title, setTitle] = useState("")
     const [date, setDate] = useState("")
-
+    const [location, setLocation] = useState("")
     const resetForm = () => {
         setTitle("")
         setDate("")
@@ -16,10 +16,10 @@ export const NewEventForm = ({newEvent}) => {
             id: uuidv4(),
             title: title,
             date: date,
+            location: location
         }
         newEvent(event)
         resetForm()
-
     }
     return (
         <form className="new-event-form" onSubmit={submitForm}>
@@ -33,7 +33,7 @@ export const NewEventForm = ({newEvent}) => {
             </label>
             <label>
                 <span>Event location:</span>
-                <select>
+                <select onChange={(e) => setLocation(e.target.value)}>
                     <option value="khorezm">Xorazm</option>
                     <option value="tashkent">Toshkent</option>
                     <option value="samarkand">Samarqand</option>
